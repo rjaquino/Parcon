@@ -1085,7 +1085,7 @@ class Then(_GRParser):
         self.railroad_children = [self.first, self.second]
     
     def parse(self, text, position, end, space, all):
-        firstResult = self.first.parse(text, position, end, space, all)
+        firstResult = self.first.parse(text, position, end, space, False)
         if not firstResult:
             return failure(firstResult.expected)
         position = firstResult.end
